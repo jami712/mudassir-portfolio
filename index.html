@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudassir Jamal | Flutter Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text .highlight {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 28px;
+            max-width: 500px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #475569;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #3b82f6;
+        }
+
+        .contact-info i {
+            font-size: 18px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59,130,246,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+        }
+
+        .hero-icon {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-icon i {
+            font-size: 200px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            color: #1e293b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        /* Experience Cards */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .exp-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .exp-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .exp-company {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .exp-date {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .exp-desc {
+            color: #475569;
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        .exp-desc li {
+            margin-bottom: 6px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .project-tech span {
+            background: #eef2ff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3b82f6;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        /* Education & Certs */
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .cert-list {
+            list-style: none;
+        }
+
+        .cert-list li {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .cert-list li i {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #3b82f6;
+        }
+
+        .cert-list a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            padding: 32px 0;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero-icon i {
+                font-size: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">Mudassir Jamal</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Mudassir <span class="highlight">Jamal</span></h1>
+                        <p>Flutter Developer specializing in cross-platform mobile apps, offline-first architecture, and Firebase integration.</p>
+                        <div class="contact-info">
+                            <a href="tel:923349499101"><i class="fas fa-phone"></i> +92 334 9499101</a>
+                            <a href="mailto:mudassirjamal712@gmail.com"><i class="fas fa-envelope"></i> mudassirjamal712@gmail.com</a>
+                            <a href="https://www.linkedin.com/in/mudassir-jamal-flutter-developer/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/jami712" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="#projects" class="btn">View Projects</a>
+                            <a href="MUDASSIR-JAMAL-RESUME.pdf" class="btn btn-outline" download>Download Resume</a>
+                        </div>
+                    </div>
+                    <div class="hero-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <div class="container">
+            <div class="skills-grid">
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">Dart</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">Provider</span>
+                <span class="skill-tag">SharedPreferences</span>
+                <span class="skill-tag">Git/GitHub</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C/C++</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Postman</span>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="timeline">
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <span class="exp-title">Flutter Developer (Trainee)</span>
+                            <span class="exp-date">03/2026 - Present</span>
+                        </div>
+                        <div class="exp-company">HH TECH HUB, Rawalpindi</div>
+                        <ul class="exp-desc">
+                            <li>Multi-module system covering sales, purchases, expenses, salary, inventory</li>
+                            <li>Date-range reporting with PDF generation (color & print-friendly)</li>
+                            <li>Invoice/bill management & supplier account tracking with partial payment history</li>
+                            <li>Offline-first architecture using SharedPreferences & Provider state management</li>
+                            <li>Charts & analytics with item-wise and person-wise breakdowns</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <span class="exp-title">Flutter Development Intern</span>
+                            <span class="exp-date">08/2025 - 02/2026</span>
+                        </div>
+                        <div class="exp-company">The Nerd Camp, Peshawar</div>
+                        <ul class="exp-desc">
+                            <li>Weather App with API integration</li>
+                            <li>Image Picker with Firebase Storage</li>
+                            <li>Chat App using Firebase Auth & Firestore</li>
+                            <li>Speedometer App utilizing device sensors</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <span class="exp-title">Web Developer Intern</span>
+                            <span class="exp-date">08/2023 - 09/2023</span>
+                        </div>
+                        <div class="exp-company">HMIS360, Peshawar</div>
+                        <ul class="exp-desc">
+                            <li>Developed responsive web applications using HTML, CSS, and PHP</li>
+                            <li>Improved UI/UX designs to enhance user experience</li>
+                            <li>Collaborated with designers and project managers on scalable solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">Online Taxi Booking System</div>
+                        <p>Secure login/signup, ride booking & fare calculation, real-time GPS tracking, driver profiles, rating system, instant notifications.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span><span>Dart</span><span>Firebase Auth</span><span>Cloud Messaging</span><span>Google Maps API</span>
+                        </div>
+                        <a href="https://github.com/jami712/Online-taxi-booking-system-using-flutter" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Speech to Text (Urdu)</div>
+                        <p>Real-time Urdu speech recognition with live transcription and clean UI. Supports Urdu language input and converts speech to text instantly.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span><span>Dart</span><span>speech_to_text package</span>
+                        </div>
+                        <a href="https://github.com/jami712/Urdu_Speech_to_Text_in_Flutter" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Multi-Module Business System</div>
+                        <p>Complete business management solution with sales, purchases, expenses, salary, inventory tracking. PDF reports, offline-first architecture.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span><span>Dart</span><span>Provider</span><span>SharedPreferences</span><span>PDF Generation</span>
+                        </div>
+                        <a href="#" class="project-link"><i class="fas fa-code"></i> Currently in Development</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certificates -->
+        <section class="section" id="education">
+            <div class="container">
+                <h2 class="section-title">Education & Certifications</h2>
+                <div class="two-col">
+                    <div class="info-card">
+                        <h3><i class="fas fa-graduation-cap" style="margin-right: 10px; color:#3b82f6;"></i> Education</h3>
+                        <p style="font-weight: 600; margin-bottom: 8px;">BS, Software Engineering</p>
+                        <p style="color: #475569; margin-bottom: 12px;">European University of Lefke, North Cyprus</p>
+                        <p style="color: #3b82f6;">January 2024</p>
+                        <hr style="margin: 20px 0; border-color: #e2e8f0;">
+                        <p style="font-weight: 600;">Registered Engineer</p>
+                        <p style="color: #475569;">Pakistan Engineering Council (PEC)</p>
+                        <p style="font-size: 14px;">Registration No.: Comp/025514 | Since 2024</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-certificate" style="margin-right: 10px; color:#3b82f6;"></i> Certifications</h3>
+                        <ul class="cert-list">
+                            <li><i class="fab fa-python"></i> <strong>Python for Data Science, AI & Development</strong><br><a href="#">Coursera - View Certificate</a></li>
+                            <li><i class="fas fa-brain"></i> <strong>Introduction to Generative AI</strong><br><a href="#">Google Cloud - Coursera</a></li>
+                            <li><i class="fas fa-language"></i> <strong>Introduction to Large Language Models</strong><br><a href="#">Google Cloud - Coursera</a></li>
+                            <li><i class="fas fa-trophy"></i> <strong>OSPE For the Real World</strong><br>Udemy Achievement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coursework -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Core Coursework</h2>
+                <div class="skills-grid" style="max-width: 800px; margin: 0 auto;">
+                    <span class="skill-tag">Introduction to Programming</span>
+                    <span class="skill-tag">Object-Oriented Programming</span>
+                    <span class="skill-tag">Data Structures & Algorithms</span>
+                    <span class="skill-tag">Operating Systems</span>
+                    <span class="skill-tag">Database Management Systems</span>
+                    <span class="skill-tag">Computer Communication</span>
+                    <span class="skill-tag">Digital Logic Design</span>
+                    <span class="skill-tag">Artificial Intelligence</span>
+                    <span class="skill-tag">Microprocessor</span>
+                    <span class="skill-tag">Project Management</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="section-title">Languages</h2>
+                <div class="skills-grid" style="gap: 20px;">
+                    <span class="skill-tag">English <span style="color:#64748b;">(Professional)</span></span>
+                    <span class="skill-tag">Urdu <span style="color:#64748b;">(Native)</span></span>
+                    <span class="skill-tag">Turkish <span style="color:#64748b;">(Conversational)</span></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p style="color: #64748b;">© 2026 Mudassir Jamal. All rights reserved.</p>
+            <p style="font-size: 14px; margin-top: 8px;">Flutter Developer | Building cross-platform mobile experiences</p>
+        </div>
+    </footer>
+</body>
+</html>
