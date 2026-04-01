@@ -358,8 +358,8 @@
         }
 
         .cert-list li {
-            margin-bottom: 16px;
-            padding-left: 24px;
+            margin-bottom: 20px;
+            padding-left: 28px;
             position: relative;
         }
 
@@ -368,12 +368,29 @@
             left: 0;
             top: 2px;
             color: #3b82f6;
+            font-size: 18px;
         }
 
-        .cert-list a {
+        .cert-title {
+            font-weight: 600;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .cert-link {
             color: #3b82f6;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.3s;
+        }
+
+        .cert-link:hover {
+            color: #1e40af;
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -553,10 +570,26 @@
                     <div class="info-card">
                         <h3><i class="fas fa-certificate" style="margin-right: 10px; color:#3b82f6;"></i> Certifications</h3>
                         <ul class="cert-list">
-                            <li><i class="fab fa-python"></i> <strong>Python for Data Science, AI & Development</strong><br><a href="#">Coursera - View Certificate</a></li>
-                            <li><i class="fas fa-brain"></i> <strong>Introduction to Generative AI</strong><br><a href="#">Google Cloud - Coursera</a></li>
-                            <li><i class="fas fa-language"></i> <strong>Introduction to Large Language Models</strong><br><a href="#">Google Cloud - Coursera</a></li>
-                            <li><i class="fas fa-trophy"></i> <strong>OSPE For the Real World</strong><br>Udemy Achievement</li>
+                            <li>
+                                <i class="fab fa-python"></i>
+                                <span class="cert-title">Python for Data Science, AI & Development</span>
+                                <a href="https://coursera.org/verify/FHE8GAGHMDW6" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-brain"></i>
+                                <span class="cert-title">Introduction to Generative AI</span>
+                                <a href="https://coursera.org/verify/YTAZVQKP6PFF" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-language"></i>
+                                <span class="cert-title">Introduction to Large Language Models</span>
+                                <a href="https://coursera.org/verify/7W7TJJ44C6MH" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-trophy"></i>
+                                <span class="cert-title">OSPE For the Real World</span>
+                                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
