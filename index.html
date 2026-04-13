@@ -30,7 +30,6 @@
     overflow-x: hidden;
   }
 
-  /* Subtle noise texture layered on top of everything */
   body::before {
     content: '';
     position: fixed; inset: 0;
@@ -38,7 +37,6 @@
     pointer-events: none; z-index: 9999; opacity: .4;
   }
 
-  /* Faint teal grid lines that run across the whole page */
   .grid-bg {
     position: fixed; inset: 0; z-index: 0;
     background-image:
@@ -48,12 +46,11 @@
     pointer-events: none;
   }
 
-  /* Large blurred colour blobs for depth */
   .orb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
   .orb-1 { width: 500px; height: 500px; background: rgba(0,229,204,.08); top: -120px; left: -100px; }
   .orb-2 { width: 400px; height: 400px; background: rgba(245,166,35,.06); bottom: 10%; right: -80px; }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -74,11 +71,11 @@
   }
   .nav-links a:hover { color: var(--teal); }
 
-  /* ── LAYOUT ── */
+  /* LAYOUT */
   main { position: relative; z-index: 1; }
   section { padding: 7rem 5vw; max-width: 1100px; margin: 0 auto; }
 
-  /* ── HERO ── */
+  /* HERO */
   #hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center;
@@ -93,7 +90,6 @@
     opacity: 0; animation: fadeUp .6s .1s forwards;
   }
   .hero-tag::before { content: '◉'; font-size: .6rem; }
-
   .hero-name {
     font-family: 'Syne', sans-serif;
     font-size: clamp(3rem, 9vw, 7rem);
@@ -102,25 +98,21 @@
     opacity: 0; animation: fadeUp .7s .2s forwards;
   }
   .hero-name span { color: var(--teal); }
-
   .hero-role {
     font-family: 'DM Mono', monospace;
     font-size: clamp(.9rem, 2.5vw, 1.25rem);
     color: var(--muted); margin-top: 1.2rem;
     opacity: 0; animation: fadeUp .7s .35s forwards;
   }
-
   .hero-desc {
     max-width: 560px; margin-top: 1.5rem;
     color: #7a92b8; font-size: 1.05rem;
     opacity: 0; animation: fadeUp .7s .45s forwards;
   }
-
   .hero-ctas {
     display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap;
     opacity: 0; animation: fadeUp .7s .55s forwards;
   }
-
   .btn-primary {
     background: var(--teal); color: #070b12;
     padding: .75rem 1.8rem; border-radius: .35rem;
@@ -130,7 +122,6 @@
     box-shadow: 0 0 24px rgba(0,229,204,.35);
   }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(0,229,204,.55); }
-
   .btn-outline {
     border: 1px solid var(--border); color: var(--text);
     padding: .75rem 1.8rem; border-radius: .35rem;
@@ -138,7 +129,6 @@
     text-decoration: none; transition: border-color .2s, color .2s;
   }
   .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
-
   .hero-stats {
     display: flex; gap: 3rem; margin-top: 4rem; flex-wrap: wrap;
     opacity: 0; animation: fadeUp .7s .65s forwards;
@@ -151,7 +141,7 @@
   .stat-num span { color: var(--teal); }
   .stat-label { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
 
-  /* ── SECTION HEADERS ── */
+  /* SECTION HEADERS */
   .sec-label {
     font-family: 'DM Mono', monospace; font-size: .7rem;
     color: var(--teal); text-transform: uppercase; letter-spacing: .18em;
@@ -167,7 +157,7 @@
     margin-bottom: 3.5rem; border-radius: 2px;
   }
 
-  /* ── SKILLS ── */
+  /* SKILLS */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -198,7 +188,7 @@
     border-radius: .25rem; font-family: 'DM Mono', monospace;
   }
 
-  /* ── EXPERIENCE TIMELINE ── */
+  /* EXPERIENCE TIMELINE */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
     content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px;
@@ -211,7 +201,6 @@
     transition: border-color .2s;
   }
   .exp-item:hover { border-color: rgba(0,229,204,.25); }
-  /* The glowing dot on the timeline */
   .exp-item::before {
     content: ''; position: absolute;
     left: -2.5rem; top: 1.8rem;
@@ -229,14 +218,13 @@
     white-space: nowrap; background: var(--bg);
     border: 1px solid var(--border); padding: .3rem .7rem; border-radius: .3rem;
   }
-  /* Amber badge for the current role */
   .exp-current { color: var(--amber) !important; border-color: rgba(245,166,35,.3) !important; }
   .exp-body { color: #7a92b8; font-size: .93rem; }
   .exp-body ul { list-style: none; padding: 0; margin-top: .75rem; display: flex; flex-direction: column; gap: .5rem; }
   .exp-body li { display: flex; gap: .6rem; align-items: flex-start; }
   .exp-body li::before { content: '→'; color: var(--teal); flex-shrink: 0; margin-top: .05rem; font-size: .85rem; }
 
-  /* ── PROJECTS ── */
+  /* PROJECTS */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -271,10 +259,40 @@
   .proj-link:hover { gap: .7rem; }
   .proj-link::after { content: '↗'; }
 
-  /* ── EDUCATION & CERTS ── */
+  /* Taxi project full-width expanded card */
+  .project-card.featured { grid-column: 1 / -1; }
+  .proj-panels {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+  @media (max-width: 640px) { .proj-panels { grid-template-columns: 1fr; } }
+  .proj-panel {
+    background: rgba(0,229,204,.04); border: 1px solid rgba(0,229,204,.12);
+    border-radius: .6rem; padding: 1.25rem;
+  }
+  .proj-panel-title {
+    font-family: 'DM Mono', monospace; font-size: .68rem;
+    color: var(--teal); text-transform: uppercase; letter-spacing: .12em;
+    margin-bottom: .9rem;
+  }
+  .proj-panel ul { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+  .proj-panel li { display: flex; gap: .6rem; align-items: flex-start; font-size: .88rem; color: var(--text); }
+  .proj-panel li::before { content: '→'; color: var(--teal); flex-shrink: 0; font-size: .82rem; margin-top: .05rem; }
+  .proj-panel .stack-row { display: flex; flex-direction: column; gap: .55rem; }
+  .proj-panel .stack-item { display: flex; align-items: baseline; gap: .5rem; font-size: .88rem; color: var(--text); }
+  .proj-panel .stack-label {
+    font-family: 'DM Mono', monospace; font-size: .66rem;
+    color: var(--muted); text-transform: uppercase; letter-spacing: .08em;
+    white-space: nowrap; min-width: 80px;
+  }
+  .proj-featured-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  /* EDUCATION & CERTS */
   .edu-certs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   @media (max-width: 680px) { .edu-certs-grid { grid-template-columns: 1fr; } }
-
   .edu-block, .cert-list {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: .75rem; padding: 2rem;
@@ -282,7 +300,6 @@
   .edu-degree { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--heading); margin-bottom: .3rem; }
   .edu-school { color: var(--teal); font-family: 'DM Mono', monospace; font-size: .82rem; margin-bottom: .5rem; }
   .edu-year { font-size: .82rem; color: var(--muted); font-family: 'DM Mono', monospace; }
-
   .cert-item {
     display: flex; align-items: flex-start; gap: .75rem;
     padding: .75rem 0; border-bottom: 1px solid var(--border);
@@ -294,7 +311,7 @@
   .cert-link { color: var(--teal); font-size: .7rem; text-decoration: none; display: inline-block; margin-top: .15rem; }
   .cert-link:hover { text-decoration: underline; }
 
-  /* ── CONTACT ── */
+  /* CONTACT */
   #contact { text-align: center; }
   .contact-card {
     background: var(--surface); border: 1px solid var(--border);
@@ -320,7 +337,7 @@
   }
   .contact-link:hover { border-color: var(--teal); color: var(--teal); }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     text-align: center; padding: 2rem;
     font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--muted);
@@ -328,25 +345,24 @@
     position: relative; z-index: 1;
   }
 
-  /* ── ANIMATIONS ── */
+  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  /* Elements start hidden; JS adds .visible on scroll */
   .reveal {
     opacity: 0; transform: translateY(28px);
     transition: opacity .65s ease, transform .65s ease;
   }
   .reveal.visible { opacity: 1; transform: none; }
 
-  /* ── CUSTOM SCROLLBAR ── */
+  /* SCROLLBAR */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--teal2); }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 640px) {
     nav { padding: 14px 5vw; }
     .nav-links { display: none; }
@@ -358,12 +374,11 @@
 </head>
 <body>
 
-<!-- Background decoration layers -->
 <div class="grid-bg"></div>
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 
-<!-- ════════════════════ NAV ════════════════════ -->
+<!-- ══════════════════ NAV ══════════════════ -->
 <nav>
   <a class="nav-logo" href="#hero">MJ</a>
   <ul class="nav-links">
@@ -377,7 +392,7 @@
 
 <main>
 
-<!-- ════════════════════ HERO ════════════════════ -->
+<!-- ══════════════════ HERO ══════════════════ -->
 <section id="hero">
   <div class="hero-tag">Available for opportunities</div>
   <h1 class="hero-name">Mudassir<br><span>Jamal</span></h1>
@@ -396,7 +411,7 @@
       <span class="stat-label">Years Coding</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">5<span>+</span></span>
+      <span class="stat-num">7<span>+</span></span>
       <span class="stat-label">Apps Built</span>
     </div>
     <div class="stat-item">
@@ -410,7 +425,7 @@
   </div>
 </section>
 
-<!-- ════════════════════ SKILLS ════════════════════ -->
+<!-- ══════════════════ SKILLS ══════════════════ -->
 <section id="skills">
   <div class="reveal">
     <p class="sec-label">What I work with</p>
@@ -476,7 +491,7 @@
   </div>
 </section>
 
-<!-- ════════════════════ EXPERIENCE ════════════════════ -->
+<!-- ══════════════════ EXPERIENCE ══════════════════ -->
 <section id="experience">
   <div class="reveal">
     <p class="sec-label">Where I've worked</p>
@@ -513,4 +528,329 @@
         </div>
         <span class="exp-date">Aug 2025 – Feb 2026</span>
       </div>
-      <div classListener('scrol
+      <div class="exp-body">
+        <p>7-month intensive internship building mobile apps using Flutter &amp; Dart with full Firebase integration.</p>
+        <ul>
+          <li>Built a Weather App with live third-party API integration</li>
+          <li>Developed an Image Picker app leveraging Firebase Storage</li>
+          <li>Created a real-time Chat App using Firebase Auth &amp; Firestore</li>
+          <li>Built a Speedometer App using native device sensors</li>
+          <li>Collaborated in an agile environment with Git &amp; GitHub version control</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Web Developer Intern</div>
+          <div class="exp-company">HMIS360 — Peshawar</div>
+        </div>
+        <span class="exp-date">Aug 2023 – Sep 2023</span>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>Developed responsive web applications using HTML, CSS, and PHP</li>
+          <li>Improved UI/UX designs to enhance user experience and usability</li>
+          <li>Resolved technical issues to ensure smooth application functionality</li>
+          <li>Collaborated with designers and project managers on scalable solutions</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ PROJECTS ══════════════════ -->
+<section id="projects">
+  <div class="reveal">
+    <p class="sec-label">What I've built</p>
+    <h2 class="sec-title">Projects</h2>
+    <div class="sec-divider"></div>
+  </div>
+  <div class="projects-grid">
+
+    <!-- ── PROJECT 01 — FEATURED (full-width) ── -->
+    <div class="project-card featured reveal">
+      <div class="proj-featured-top">
+        <div>
+          <div class="proj-num">01</div>
+          <div class="proj-title" style="font-size:1.45rem;">Online Taxi Booking System</div>
+          <p class="proj-desc" style="margin-top:.5rem; max-width:620px;">
+            A full-featured ride-booking mobile app built with Flutter — connecting passengers and drivers
+            with real-time GPS tracking, seamless authentication, and instant push notifications.
+          </p>
+        </div>
+        <a class="proj-link" style="border-top:none; padding-top:0; align-self:flex-start;"
+           href="https://github.com/jami712/Online-taxi-booking-system-using-flutter"
+           target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="proj-panels">
+        <!-- Key Features -->
+        <div class="proj-panel">
+          <div class="proj-panel-title">Key Features</div>
+          <ul>
+            <li>User Authentication</li>
+            <li>Taxi Booking</li>
+            <li>Real-Time Tracking</li>
+            <li>Rating &amp; Review System</li>
+            <li>Driver Profiles</li>
+            <li>Driver Availability Status</li>
+            <li>Push Notifications</li>
+          </ul>
+        </div>
+        <!-- Technology Stack -->
+        <div class="proj-panel">
+          <div class="proj-panel-title">Technology Stack</div>
+          <div class="stack-row">
+            <div class="stack-item">
+              <span class="stack-label">Frontend</span>
+              Flutter Framework
+            </div>
+            <div class="stack-item">
+              <span class="stack-label">Backend</span>
+              Dart
+            </div>
+            <div class="stack-item">
+              <span class="stack-label">Maps</span>
+              Google Maps API
+            </div>
+            <div class="stack-item">
+              <span class="stack-label">Auth</span>
+              Firebase Authentication
+            </div>
+            <div class="stack-item">
+              <span class="stack-label">Notifications</span>
+              Firebase Cloud Messaging (FCM)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-stack">
+        <span class="tag">Flutter</span>
+        <span class="tag">Dart</span>
+        <span class="tag">Firebase Auth</span>
+        <span class="tag">Firestore</span>
+        <span class="tag">Google Maps API</span>
+        <span class="tag">FCM</span>
+      </div>
+    </div>
+
+    <!-- ── PROJECT 02 ── -->
+    <div class="project-card reveal">
+      <div class="proj-num">02</div>
+      <div class="proj-title">Urdu Speech to Text</div>
+      <p class="proj-desc">A real-time Urdu speech recognition app with live transcription as you speak, and a clean, minimal UI designed for clarity and ease of use.</p>
+      <div class="proj-stack">
+        <span class="tag">Flutter</span>
+        <span class="tag">Dart</span>
+        <span class="tag">speech_to_text</span>
+        <span class="tag">Urdu NLP</span>
+      </div>
+      <a class="proj-link" href="https://github.com/jami712/Urdu_Speech_to_Text_in_Flutter" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+
+    <!-- ── PROJECT 03 ── -->
+    <div class="project-card reveal">
+      <div class="proj-num">03</div>
+      <div class="proj-title">Business Management App</div>
+      <p class="proj-desc">A comprehensive client-facing business app with 10+ screens covering multi-module accounting, PDF report generation, invoice management, and full offline-first support.</p>
+      <div class="proj-stack">
+        <span class="tag">Flutter</span>
+        <span class="tag">Provider</span>
+        <span class="tag">SharedPreferences</span>
+        <span class="tag">PDF</span>
+        <span class="tag">Charts</span>
+      </div>
+    </div>
+
+    <!-- ── PROJECT 04 ── -->
+    <div class="project-card reveal">
+      <div class="proj-num">04</div>
+      <div class="proj-title">Weather App</div>
+      <p class="proj-desc">A live weather app that fetches real-time forecasts via a third-party API, displaying current conditions, temperature, and location-based data with a clean, responsive UI.</p>
+      <div class="proj-stack">
+        <span class="tag">Flutter</span>
+        <span class="tag">Dart</span>
+        <span class="tag">REST API</span>
+        <span class="tag">Weather API</span>
+      </div>
+    </div>
+
+    <!-- ── PROJECT 05 ── -->
+    <div class="project-card reveal">
+      <div class="proj-num">05</div>
+      <div class="proj-title">Image Picker App</div>
+      <p class="proj-desc">An app for selecting and uploading images directly to Firebase Storage, with real-time upload progress and retrieval — demonstrating a full cloud media pipeline.</p>
+      <div class="proj-stack">
+        <span class="tag">Flutter</span>
+        <span class="tag">Dart</span>
+        <span class="tag">Firebase Storage</span>
+        <span class="tag">image_picker</span>
+      </div>
+    </div>
+
+    <!-- ── PROJECT 06 ── -->
+    <div class="project-card reveal">
+      <div class="proj-num">06</div>
+      <div class="proj-title">Real-Time Chat App</div>
+      <p class="proj-desc">A fully functional messaging app with secure user authentication, real-time message sync via Firestore, and a smooth, modern chat interface.</p>
+      <div class="proj-stack">
+        <span class="tag">Flutter</span>
+        <span class="tag">Dart</span>
+        <span class="tag">Firebase Auth</span>
+        <span class="tag">Firestore</span>
+      </div>
+    </div>
+
+    <!-- ── PROJECT 07 ── -->
+    <div class="project-card reveal">
+      <div class="proj-num">07</div>
+      <div class="proj-title">Speedometer App</div>
+      <p class="proj-desc">A real-time speedometer that reads live velocity data directly from the device's built-in sensors, displayed through a smooth, animated gauge interface.</p>
+      <div class="proj-stack">
+        <span class="tag">Flutter</span>
+        <span class="tag">Dart</span>
+        <span class="tag">Device Sensors</span>
+        <span class="tag">GPS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ EDUCATION & CERTS ══════════════════ -->
+<section id="education">
+  <div class="reveal">
+    <p class="sec-label">Background &amp; learning</p>
+    <h2 class="sec-title">Education &amp; Certifications</h2>
+    <div class="sec-divider"></div>
+  </div>
+  <div class="edu-certs-grid">
+
+    <div class="edu-block reveal">
+      <p class="sec-label" style="margin-bottom:.5rem;">Degree</p>
+      <div class="edu-degree">Bachelor of Engineering</div>
+      <div class="edu-degree" style="color:var(--teal);font-size:1rem;">Software Engineering</div>
+      <div class="edu-school" style="margin-top:.5rem;">European University of Lefke</div>
+      <div class="edu-school">North Cyprus</div>
+      <div class="edu-year">September 2019 – January 2024</div>
+      <div style="margin-top:1.5rem; border-top:1px solid var(--border); padding-top:1.25rem;">
+        <p class="sec-label" style="margin-bottom:.75rem;">Relevant Coursework</p>
+        <div class="skill-tags" style="gap:.35rem;">
+          <span class="tag" style="font-size:.72rem;">OOP</span>
+          <span class="tag" style="font-size:.72rem;">Data Structures</span>
+          <span class="tag" style="font-size:.72rem;">Algorithms</span>
+          <span class="tag" style="font-size:.72rem;">AI</span>
+          <span class="tag" style="font-size:.72rem;">OS</span>
+          <span class="tag" style="font-size:.72rem;">DBMS</span>
+          <span class="tag" style="font-size:.72rem;">Project Management</span>
+          <span class="tag" style="font-size:.72rem;">Digital Logic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-list reveal">
+      <p class="sec-label" style="margin-bottom:1rem;">Certifications</p>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-text">Registered Engineer — Pakistan Engineering Council</div>
+          <div class="cert-issuer">PEC &middot; Reg No: Comp/025514 &middot; Since 2024</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-text">Python for Data Science, AI &amp; Development</div>
+          <div class="cert-issuer">Coursera &middot; IBM</div>
+          <a class="cert-link" href="https://coursera.org/verify/FHE8GAGHMDW6" target="_blank" rel="noopener">Verify &#8594;</a>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-text">Introduction to Generative AI</div>
+          <div class="cert-issuer">Coursera &middot; Google Cloud</div>
+          <a class="cert-link" href="https://coursera.org/verify/YTAZVQKP6PFF" target="_blank" rel="noopener">Verify &#8594;</a>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-text">Introduction to Large Language Models</div>
+          <div class="cert-issuer">Coursera &middot; Google Cloud</div>
+          <a class="cert-link" href="https://coursera.org/verify/7W7TJJ44C6MH" target="_blank" rel="noopener">Verify &#8594;</a>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div>
+          <div class="cert-text">Achievements OSPE For the Real World</div>
+          <div class="cert-issuer">Udemy</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section id="contact">
+  <div class="contact-card reveal">
+    <p class="sec-label">Let's work together</p>
+    <h2 class="sec-title">Get In Touch</h2>
+    <p style="color:#7a92b8; max-width:420px; margin:0 auto;">
+      I'm open to Flutter developer roles, internships, and freelance mobile, web &amp; desktop app projects. Feel free to reach out!
+    </p>
+    <div class="contact-email">mudassirjamal712&#64;gmail.com</div>
+    <a class="btn-primary" href="mailto&#58;mudassirjamal712&#64;gmail.com">Send an Email</a>
+    <div class="contact-links">
+      <a class="contact-link" href="https://linkedin.com/in/mudassir-jamal-flutter-developer" target="_blank" rel="noopener">&#8599; LinkedIn</a>
+      <a class="contact-link" href="https://github.com/jami712" target="_blank" rel="noopener">&#8599; GitHub</a>
+      <a class="contact-link" href="tel:+923349499101">&#9990; +92 334 949 9101</a>
+    </div>
+    <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <span class="tag">&#127477;&#127472; English</span>
+      <span class="tag">&#127477;&#127472; Urdu</span>
+      <span class="tag">&#127481;&#127479; Turkish</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Designed &amp; coded with care &middot; Mudassir Jamal &copy; 2026</p>
+</footer>
+
+<script>
+  // Scroll-reveal animation
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80 * i);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--teal)' : '';
+    });
+  });
+</script>
+</body>
+</html>
